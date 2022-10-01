@@ -25,6 +25,7 @@ docker compose up --build -d
 ```
 
 > 📝 Note: The `--build` flag is to ensure that the containers are rebuilt.
+
 > 📝 Note: The `-d` flag is to run the containers in the background, without it, you will see the logs of the containers.
 
 Once the containers are up, you can connect to the mongo shell using the following command:

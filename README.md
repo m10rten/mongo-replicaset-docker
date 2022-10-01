@@ -6,7 +6,7 @@ This is a simple example of a mongo replicaset using docker-compose.
 
 ## Usage
 
-Before you start, make sure you have docker and docker installed.
+Before you start, make sure you have docker installed.
 
 Once docker is installed, make sure you have your local ip address. You can find this by running `ipconfig` on windows or `ifconfig` on mac.
 

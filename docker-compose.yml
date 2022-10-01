@@ -1,0 +1,48 @@
+version: "3.7"
+
+networks:
+  mongo_net:
+    driver: bridge
+
+services:
+  m1:
+    image: mongo:6.0
+    container_name: m1
+    hostname: m1
+    networks:
+      - mongo_net
+    ports:
+      - "2001:27017"
+    volumes:
+      - .mongo/m1:/data/db
+      - ./entrypoint.sh:/entrypoint.sh
+    command: mongod --replSet mongoSet --bind_ip_all
+    restart: always
+
+  m2:
+    image: mongo:6.0
+    container_name: m2
+    hostname: m2
+    networks:
+      - mongo_net
+    ports:
+      - "2002:27017"
+    volumes:
+      - .mongo/m2:/data/db
+      - ./entrypoint.sh:/entrypoint.sh
+    command: mongod --replSet mongoSet --bind_ip_all
+    restart: always
+
+  m3:
+    image: mongo:6.0
+    container_name: m3
+    hostname: m3
+    networks:
+      - mongo_net
+    ports:
+      - "2003:27017"
+    volumes:
+      - .mongo/m3:/data/db
+      - ./entrypoint.sh:/entrypoint.sh
+    command: mongod --replSet mongoSet --bind_ip_all
+    restart: always

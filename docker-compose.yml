@@ -4,6 +4,7 @@ networks:
   mongo_net:
     driver: bridge
 
+name: mongo-replica-set-cluster
 services:
   m1:
     image: mongo:6.0
